@@ -26,8 +26,9 @@ class NotesTest extends TestCase
     {
         //Route::post('notes')
         //when
+        /*
         $this->post('notes')
-          //then
         see->('Create a note');
+        */
     }
 }

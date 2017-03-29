@@ -1,6 +1,8 @@
 <?php
 
 use App\Note;
+use App\User;
+use App\Candidate;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,5 +17,7 @@ Route::get('notes',function(){
     return view('notes',compact('notes'));
 });
 Route::post('notes',function(){
-  return ' Create a note';
+  return 'Create a note';
 });
+
+Route::resource('candidate', 'CandidateController');
