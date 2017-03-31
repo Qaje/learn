@@ -11,22 +11,16 @@ class CandidatesTableSeeder extends Seeder
      */
     public function run()
     {
-      'name',
-      'email',
-      'phone',
-      'latitude',
-      'longitude',
-      'street',
-      'city',
-      'state',
-      'date'
-
-      DB::table('users')->insert([
+          DB::table('users')->insert([
           'name' => str_random(10),
           'email' => str_random(10).'@gmail.com',
           'phone' => int_random('secret'),
           'latitude' => str_random(10),
-          
-      ]);
+          'longitude' => str_random(10),
+          'street' => str_random(10),
+          'city' => str_random(10),
+          'state' => str_random(5),
+          'date' => date_random(),
+          ]);
     }
 }

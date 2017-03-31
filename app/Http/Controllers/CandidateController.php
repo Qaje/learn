@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -47,7 +46,20 @@ class CandidateController extends Controller
 
         return redirect('candidates');
         */
-        dd(input::all());
+
+
+        //dd($request->date);
+        $candidate =new Candidate();
+        $candidate->name=$request->name;
+        $candidate->email=$request->email;
+        $candidate->phone=$request->phone;
+        $candidate->latitude=$request->latitude;
+        $candidate->longitude=$request->longitude;
+        $candidate->city=$request->city;
+        $candidate->state=$request->state;
+        $candidate->date=$request->date;
+        $candidate->save();
+        /*dd(Request());*/
     }
 
 /**
