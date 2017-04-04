@@ -21,3 +21,8 @@ Route::post('notes',function(){
 });
 
 Route::resource('candidate', 'CandidateController');
+
+Route::get('home', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);

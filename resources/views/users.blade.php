@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Laravel</title>
-  </head>
-  <body>
-      {!! Form::open(['url' => 'users')','method'->'put']) !!}
+@extends('app')
 
+@section('content')
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-heading">Home</div>
 
-      {!! Form::close() !!}
-
-    </body>
-</html>
+          <div class="panel-body">
+            You are using bootstrap
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
