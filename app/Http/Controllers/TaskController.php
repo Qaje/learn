@@ -23,7 +23,6 @@ class TaskController extends Controller
     }
     public function store()
     {
-
         dd(Input::all());
     }
 
