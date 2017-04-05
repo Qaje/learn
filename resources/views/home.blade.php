@@ -35,7 +35,7 @@
     </div>
 </nav>
 
-@yield('content')
+        @yield('content')
 
 <!-- Scripts -->
 {!! Html::script('assets/js/bootstrap.min.js') !!}

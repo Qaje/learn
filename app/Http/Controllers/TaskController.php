@@ -14,7 +14,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return 'lista de tasks';
+        return view('tasks/index');
     }
     public function create()
     {
@@ -34,13 +34,12 @@ class TaskController extends Controller
 
     public function edit($id)
     {
-        //
+        return view('tasks/edit ',['id'=>$id]);
     }
-    function update(Request $request, $id)
+
+    function update($id)
     {
-        $user = Task::find($id);
-        $user->update($request->all());
-        return ['update'=>true];
+        dd(input::all());
     }
     public function destroy($id)
     {
