@@ -23,12 +23,24 @@
 'Cats' => ['leopard' => 'Leopard'],
 'Dogs' => ['spaniel' => 'Spaniel'],
 ]) !!}
+		<div class="visible-print text-center">
+		            {!! QrCode::size(100)->generate(Request::url()); !!}
+		            <p>Scan me to return to the original page.</p>
+		</div>
+
+
 {!! MaterializeCSS::include_full() !!}
+
 <link rel="stylesheet" href="http://yourdomain.com/materialize-css/css/materialize.min.css">
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="http://yourdomain.com/materialize-css/js/materialize.min.js"></script>
 {!!Form::close() !!}
 {!! MaterializeCSS::include_full() !!}
+
+
+
+
+
 
 <link rel="stylesheet" href="http://yourdomain.com/materialize-css/css/materialize.min.css">
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>

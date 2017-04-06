@@ -9,7 +9,9 @@
         "laravel/framework": "5.1.*",
         "fzaninotto/faker": "^1.6",
         "laravelcollective/html": "5.1.*",
-        "skydiver/laravel-materialize-css": "dev-master"
+        "skydiver/laravel-materialize-css": "dev-master",
+        "endroid/qrcode": "^1.9",
+        "simplesoftwareio/simple-qrcode": "~1"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

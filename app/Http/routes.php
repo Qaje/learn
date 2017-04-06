@@ -15,16 +15,10 @@ Route::get('/', function ()
 
 Route::resource('candidate', 'CandidateController');
 
-Route::get('home', [
-    'as' => 'home',
-    'uses' => 'HomeController@index'
-]);
-
 Route::resource('task','TaskController');
 
-
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('Fauth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 

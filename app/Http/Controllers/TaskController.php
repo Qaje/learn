@@ -10,10 +10,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
+use Endroid\QrCode\QrCode;
+
 class TaskController extends Controller
 {
     public function index()
     {
+        
         return view('tasks/index');
     }
     public function create()
