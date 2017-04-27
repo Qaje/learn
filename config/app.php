@@ -148,6 +148,7 @@ return [
         /*materialize*/
         Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -199,6 +200,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'MaterializeCSS' => Skydiver\LaravelMaterializeCSS\MaterializeCSS::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

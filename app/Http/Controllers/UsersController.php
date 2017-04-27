@@ -12,18 +12,18 @@ class UserController extends Controller
 {
     public function index()
     {
-        //
+        return User::view('/');
     }
     public function create()
     {
         //
     }
-      public function store(Request $request)
-      {
-          //createu
-          User::create($request->all());
-          return ['created'=> true];
-      }
+    public function store(Request $request)
+    {
+        //created
+        User::create($request->all());
+        return ['created'=> true];
+    }
 
     public function show($id)
     {
@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         //
     }
- function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $user = User::find($id);
         $user->update($request->all());

@@ -11,7 +11,8 @@
         "laravelcollective/html": "5.1.*",
         "skydiver/laravel-materialize-css": "dev-master",
         "endroid/qrcode": "^1.9",
-        "simplesoftwareio/simple-qrcode": "~1"
+        "simplesoftwareio/simple-qrcode": "~1",
+        "barryvdh/laravel-debugbar": "^2.3"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

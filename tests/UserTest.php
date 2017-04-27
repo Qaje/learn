@@ -14,7 +14,6 @@ class UserTest extends TestCase
         //create user
         $this->post('user',$data)
         ->seeJsonEquals(['created'=>true]);
-
         $data = $this->getData(['name'=>'jane']);
         //actualiza user
         $this->put('/user/1',$data)
@@ -33,6 +32,6 @@ class UserTest extends TestCase
       'password' => '12345'
     ];
     $data = array_merge($data, $custom);
-    return true;
+    return $data;
   }
 }

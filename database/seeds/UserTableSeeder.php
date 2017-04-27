@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Database\Seeder;
 
@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         	'name' => 'Javier',
         	'email' => 'admin@styde.net',
          	'role' => 'admin',
-         	'password'=> ''
+         	'password'=> 'admin'
         	]);
         factory(App\User::class, 49)->create();
     }
