@@ -16,7 +16,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        
+
         return view('tasks/index');
     }
     public function create()
@@ -42,7 +42,9 @@ class TaskController extends Controller
 
     function update($id)
     {
-        dd(input::all());
+        $task = Task::find($id);
+        $task->update($request->all());
+        return ['update'=>true];
     }
     public function destroy($id)
     {

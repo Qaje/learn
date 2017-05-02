@@ -38,8 +38,8 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                        <li><a href="/auth/login">Login</a></li>
-                        <li><a href="/auth/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="register">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -59,10 +59,6 @@
                     <div class="title">Laravel 5</div>
                     <div class="quote">{{ Inspiring::quote() }}</div>
                 </div>
-            </div>
-            <div class="visible-print text-center">
-                {!! QrCode::size(100)->generate(Request::url()); !!}
-                <p>Scan me to return to the original page.</p>
             </div>
         </div>
     @yield('content')

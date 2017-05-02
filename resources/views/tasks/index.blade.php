@@ -15,7 +15,6 @@
 </div>
 
 <button type="submit">Listar</button>
-
 {!! Form::checkbox('name', 'value')!!}
 
 {!! Form::date('name', \Carbon\Carbon::now()) !!}
