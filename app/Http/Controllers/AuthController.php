@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Auth;
 
-class UserController extends Controller
+class AuthController extends Controller
 {
     public function index()
     {
-        return User::view('/');
+
+        return Auth::view('/');
     }
     public function create()
     {
@@ -21,14 +22,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //created
-        User::create($request->all());
+        Auth::create($request->all());
         return ['created'=> true];
     }
 
     public function show($id)
     {
         //obterner
-        return User::find($id);
+        return Auth::find($id);
     }
 
     public function edit($id)
@@ -37,14 +38,14 @@ class UserController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->update($request->all());
+        $Auth = Auth::find($id);
+        $Auth->update($request->all());
         return ['update'=>true];
     }
     public function destroy($id)
     {
         //eliminar
-        User::destroy($id);
+        Auth::destroy($id);
         return['deleted'=>true];
     }
 }
