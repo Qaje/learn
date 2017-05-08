@@ -13,54 +13,39 @@ Route::get('/', function ()
     return view('welcome');
 });
 
-Route::get('/create', function(){
-	$task = App\Task::create([
-		'id' => 5,
-		'name' => 'Laravel 5.1'
-		]);
-	return 'Registro exitoso';
+Route::get('notes/list',function(){
+	$notes = DB::table('notes')->latest()->get();
+	return view('notes/list',compact('notes'));
 });
-
-Route::get('/read/{id}', function($id){
-	$task = App\Task::find($id);
-	return $task;
+/*Route::get('notes/{note}',function($id){
+	$notes = DB::table('notes')->find($id);
+	dd($id);
+	return view('notes/list',compact('notes'));
 });
+*/
+Route::get('notes','NoteController@index');
+Route::get('notes/{id}','NoteController@show');
+Route::get('notes/create','NoteController@create');
+Route::post('notes','NoteController@store');
+//Route::get('notes/{note}','NoteController@show')->where('note','[0-9]+');
+// Route::get('notes', 'NoteController@index' {
+//     return view('notes', [
+//         'notes' => Note::orderBy('created_at', 'asc')->get())
+//     ]);
+// });
 
-Route::get('/update/{id}',function($id){
-	$task = App\Task::find($id);
-
-	$task->name = 'PHP';
-	$task->save();
-	return 'Registro actualizado'.$task;
-});
-
-Route::get('/delete/{id}',function($id){
-	$task = App\Task::find($id);
-	$task->delete();
-	return 'Registro Elminado';
-});
-
-
-Route::resource('candidates', 'CandidateController');
-Route::resource('auth','AuthController');
-Route::resource('task','TaskController');
-
-Route::Controller('authors','AuthController');
-Route::post('authors/store','AuthController@store');
-Route::post('authors/update/{id}','AuthController@update');
-Route::get('authors/destroy/{id}','AuthController@destroy');
-/*
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
-Rsost('auth/register', 'Auth\AuthController@postRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 // Password reset link request routes...
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
+Route::controllers(['password' => 'Auth\PasswordController',]);
+
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
-*/

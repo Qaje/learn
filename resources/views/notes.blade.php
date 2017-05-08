@@ -16,7 +16,6 @@
     <form method="post">
         {!! csrf_field() !!}
         <textarea></textarea>
-        
         <button type="submit">Create Note </button>
     </form>
   </body>
