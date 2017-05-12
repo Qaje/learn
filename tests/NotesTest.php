@@ -22,18 +22,12 @@ class NotesTest extends TestCase
         ->see('Second note');
     }
 
-    // public function test_create_note()
-    // {
-    //     $this->visit('notes')
-    //     ->click('Add a note')
-    //     ->seePageIs('notes/create')
-    //     ->see('Create a note')
-    //     ->type('A new note','note')
-    //     ->press('Create note')
-    //     ->seePageIs('notes')
-    //     ->see('A new note')
-    //     ->seeInDatabase('notes',[
-    //       'note' =>  'A new note'
-    //       ]);
-    // }
+     public function test_create_note()
+     {
+            //  Route::post('noter')
+            //when
+            $this ->post('notes');
+                //then
+                ->see('Creating a note');
+     }
 }

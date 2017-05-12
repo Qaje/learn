@@ -5,26 +5,14 @@ use App\User;
 use App\Candidate;
 use App\Task;
 use App\Auth;
-/*
-use Illuminate\Http\Request;
-*/
+
 Route::get('/', function ()
 {
     return view('welcome');
 });
 
-Route::get('notes/list',function(){
-	$notes = DB::table('notes')->latest()->get();
-	return view('notes/list',compact('notes'));
-});
-/*Route::get('notes/{note}',function($id){
-	$notes = DB::table('notes')->find($id);
-	dd($id);
-	return view('notes/list',compact('notes'));
-});
-*/
 Route::get('notes','NoteController@index');
-Route::get('notes/{id}','NoteController@show');
+Route::get('notes/{$id}','NoteController@show');
 Route::get('notes/create','NoteController@create');
 Route::post('notes','NoteController@store');
 //Route::get('notes/{note}','NoteController@show')->where('note','[0-9]+');

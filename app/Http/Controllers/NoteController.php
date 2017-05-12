@@ -1,12 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-/*NOTE */
 use App\Note;
 use DB;
 
@@ -14,9 +11,8 @@ class NoteController extends Controller
 {
     public function index()
     {
-       // $notes = DB::table('notes')->get();
+        //$notes = DB::table('notes')->get();
         $notes = Note::all();
-  //   dd($notes);
         return view('notes/index',compact('notes'));
     }
 
@@ -27,15 +23,22 @@ class NoteController extends Controller
 
     public function store()
     {
-        return 'esta en store  ';
+            $this -> validate(request(),[
+                    'note' => ['required','max:200']
+                ]);
+            $data = request()->all();
+
+            Note::create($data);
+
+            return redirect()->to('notes');
+        //return request()->only ('note');
+        //return 'esta en store  ';
     }
 
-    public function show(Note $note)
+    public function show($note)
     {
-        // $note = Note::find($id);
-        // return view('notes.show',compact('note'));
-        return $note;
-      //  dd($note);
+        dd($note);
+        //return $id;
     }
 
     /**
