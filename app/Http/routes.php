@@ -5,11 +5,38 @@ use App\User;
 use App\Candidate;
 use App\Task;
 use App\Auth;
+use App\Product;
 
 Route::get('/', function ()
 {
     return view('welcome');
 });
+Route::resource('product', 'ProductController');
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('products', 'ProductController');
+});
+// Angular HTML Templates
+Route::group(array('prefix'=>'/htmltemplates/'),function(){
+    Route::get('{htmltemplates}', array( function($htmltemplates)
+    {
+        $htmltemplates = str_replace(".html","",$htmltemplates);
+        View::addExtension('html','php');
+        return View::make('htmltemplates.'.$htmltemplates);
+    }));
+});
+
+
+Route::get('home','HomeController@index');
 
 Route::get('notes','NoteController@index');
 Route::get('notes/{id}','NoteController@show');
